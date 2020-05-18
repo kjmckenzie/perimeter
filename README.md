@@ -9,6 +9,8 @@ Each interaction you have with other Perimeter app user is logged locally and ma
 
 The chart option allows you to review your last 24 hrs of activity to see what times of the day have been crowding hot spots so you can avoid them next time.
 
+<img src="https://github.com/kjmckenzie/perimeter/blob/master/XAM/Images/chart.PNG?raw=true" width="70%"/>
+
 This app uses you device Bluetooth and GPS features and does not share any internal data, nor will you be asked to upload any data to us or a 3rd party organisation.
 
 
