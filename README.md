@@ -15,7 +15,9 @@ The chart option allows you to review your last 24 hrs of activity to see what t
 
 <img src="https://github.com/kjmckenzie/perimeter/blob/master/XAM/Images/chart.PNG?raw=true" width="300"/>
 
-This app uses you device Bluetooth and GPS features and does not share any internal data, nor will you be asked to upload any data to any 3rd party organisations.
+This app uses you device Bluetooth and GPS features to connect to other Perimeter app users.
+
+This app does not contain any code that shares any internal data to 3rd party organisations.
 
 <b>Platforms</b><br>
 Android, iOS.<br>
@@ -27,7 +29,3 @@ LeoJHarris.XForms.Plugin.EnhancedEntry.<br>
 SkiaSharp.<br>
 Xamarin.Forms.Plugin.CustomToggleButton.<br>
 Rg.Plugins.Popup.<br>
-
-
-
-
