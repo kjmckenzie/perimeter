@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "dgSpecHash": "Yr9jtQLlOsyYa+h1KydlGyKRinOMxl/8vy2seoUrUCUm84osqJJqen53gTMWOR0MmtGYI1Xr/fIiYDTYyh90Ag==",
+  "success": true,
+  "projectFilePath": "D:\\COVID19\\XAM\\COVID19.iOS\\Perimeter.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kenric\\.nuget\\packages\\leojharris.xforms.plugin.enhancedentry\\1.0.6\\leojharris.xforms.plugin.enhancedentry.1.0.6.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\microcharts\\0.7.1\\microcharts.0.7.1.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\microcharts.forms\\0.7.1\\microcharts.forms.0.7.1.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\plugin.ble\\2.1.0\\plugin.ble.2.1.0.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\rg.plugins.popup\\2.0.0.2\\rg.plugins.popup.2.0.0.2.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\skiasharp\\1.68.2.1\\skiasharp.1.68.2.1.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\skiasharp.svg\\1.60.0\\skiasharp.svg.1.60.0.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\skiasharp.views\\1.68.1.1\\skiasharp.views.1.68.1.1.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\skiasharp.views.forms\\1.68.1.1\\skiasharp.views.forms.1.68.1.1.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\system.valuetuple\\4.4.0\\system.valuetuple.4.4.0.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xam.plugin.popupmenu\\1.1.0\\xam.plugin.popupmenu.1.1.0.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xamarin.forms\\4.6.0.772\\xamarin.forms.4.6.0.772.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xamarin.forms.maps\\4.6.0.772\\xamarin.forms.maps.4.6.0.772.nupkg.sha512",
+    "C:\\Users\\kenric\\.nuget\\packages\\xamarin.forms.plugin.customtogglebutton\\1.0.1\\xamarin.forms.plugin.customtogglebutton.1.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

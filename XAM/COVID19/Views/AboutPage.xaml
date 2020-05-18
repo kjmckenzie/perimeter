@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="About"
+             x:Class="Perimeter.Views.AboutPage"
+             xmlns:enhancedEntry="clr-namespace:LeoJHarris.FormsPlugin.Abstractions;assembly=LeoJHarris.FormsPlugin.Abstractions"
+             >
+
+    <Grid VerticalOptions="Fill" BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <StackLayout Margin="10" VerticalOptions="Center">
+            <StackLayout Spacing="6" VerticalOptions="Center">
+        
+                <StackLayout>
+                    <Image Source="assets_sidebar.png" HorizontalOptions="Center"  Margin="20" Aspect="AspectFill" />
+                </StackLayout>
+
+                <Label Text="" FontSize="Medium" FontAttributes="Bold"  XAlign="Center" HorizontalOptions="Center" />
+
+                <Label Text="Copyright 2020" FontSize="Medium" XAlign="Center" HorizontalOptions="Center"    />
+
+                <Label Text="perimeter.trendeer.com" FontSize="Small" XAlign="Center" HorizontalOptions="Center"    />
+
+                <Label x:Name="versionLabel" Text="1.0.0.0" FontSize="Small" XAlign="Center" HorizontalOptions="Center"   />
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </Grid>
+
+
+</ContentPage>

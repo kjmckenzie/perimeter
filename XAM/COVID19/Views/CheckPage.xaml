@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Perimeter.Views.CheckPage"
+             xmlns:toggle="clr-namespace:Xamarin.Forms.Plugin.CustomToggleButton;assembly=Xamarin.Forms.Plugin.CustomToggleButton"
+             xmlns:controls="clr-namespace:Perimeter.Controls;assembly=Perimeter"
+            
+            >
+
+    <Grid BackgroundColor="{StaticResource WindowBackgroundTable}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0,20,0,0"/>
+        </Grid.Margin>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0">
+            <Image Margin="10" Source="assets_bluetooth.png" HorizontalOptions="Center" WidthRequest="250" HeightRequest="100"
+                 VerticalOptions="Center"/>
+            <Label FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center"
+                       Text="Checking Bluetooth support" Padding="0,0,20,0"/>
+                  
+        </StackLayout>
+
+        <controls:Pulse x:Name="pulse" Grid.Row="1" IsVisible="True" AutoStart="True" PulseColor="#092ABB" Margin="50" Speed="10" Source="Perimeter.assets.ble.png"/>
+
+        <ScrollView Grid.Row="1" IsVisible="False" x:Name="scroll">
+            <StackLayout Padding="20">
+                
+                <StackLayout x:Name="stkResults" HorizontalOptions="Center" Padding="0,20,0,0">
+
+                    <StackLayout Padding="0,0,40,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Body" VerticalOptions="Center" FontAttributes="Bold" TextColor="Black" WidthRequest="150"
+                    Text="is supported"  />
+                            <Image x:Name="imgBluetoothAvailable" IsVisible="False" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40"
+                    Source="assets_cross.png"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Padding="0,0,20,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Body" VerticalOptions="Center" FontAttributes="Bold" TextColor="Black" WidthRequest="150"
+                    Text="Is turned on"  />
+                            <Image x:Name="imgBluetoothOn" IsVisible="False" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40"
+                    Source="assets_cross.png"/>
+                            <ImageButton x:Name="imgBluetoothSettings" IsVisible="False" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50"
+                    Source="assets_setting.png" Clicked="btnBluetoothSettings_Clicked"/>
+                        </StackLayout>
+
+                    </StackLayout>
+ 
+                    <StackLayout Padding="0,0,20,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Body" VerticalOptions="Center" FontAttributes="Bold" WidthRequest="150" TextColor="Black"
+                    Text="Location Features"  />
+                            <Image x:Name="imgLocationFeatures" IsVisible="False" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40"
+                    Source="assets_cross.png"/>
+                            <ImageButton x:Name="imgLocationSettings" IsVisible="False" BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50"
+                    Source="assets_setting.png" Clicked="btnLocationSettings_Clicked"/>
+                        </StackLayout>
+
+                    </StackLayout>
+                    
+                    <StackLayout Padding="0,0,20,0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label FontSize="Body" VerticalOptions="Center" FontAttributes="Bold" WidthRequest="150" TextColor="Black"
+                    Text="GATT Features"  />
+                            <Image x:Name="imgBluetoothFeatures" IsVisible="False" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40"
+                    Source="assets_cross.png"/>
+                        </StackLayout>
+                    </StackLayout>
+
+                    <Label x:Name="lblStatus" FontSize="Medium" HorizontalTextAlignment="Center"
+                    TextColor="Black" Margin="0,50,0,0"/>
+                    <Label x:Name="lblBroadcast" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"
+                    TextColor="Black" Margin="10"/>
+
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+
+        <Button x:Name="btnContinue" Margin="20" Text="Setup your profile" IsVisible="False"
+                        Grid.Row="2" Clicked="btnContinue_Clicked"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+    </Grid>
+    
+</ContentPage>

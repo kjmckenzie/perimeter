@@ -1,0 +1,74 @@
+﻿<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             BackgroundColor="Transparent"
+             x:Class="Perimeter.Views.SidebarPage"
+             xmlns:toggle="clr-namespace:Xamarin.Forms.Plugin.CustomToggleButton;assembly=Xamarin.Forms.Plugin.CustomToggleButton"
+             xmlns:controls="clr-namespace:Perimeter.Controls;assembly=Perimeter"
+            
+            >
+    <pages:PopupPage.Animation>
+        <animations:MoveAnimation
+            DurationIn="200"
+            DurationOut="100"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"
+            PositionIn="Right"
+            PositionOut="Right" />
+    </pages:PopupPage.Animation>
+    <Grid BackgroundColor="Transparent" VerticalOptions="FillAndExpand" RowSpacing="0"
+          HorizontalOptions="FillAndExpand">
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness" Android="0,40,0,0" iOS="0,50,0,0"/>
+        </Grid.Margin>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="0" WidthRequest="200" HeightRequest="100"/>
+        <Image Source="logo.png" HeightRequest="80" WidthRequest="80" Grid.Row="0" Grid.Column="1"
+               HorizontalOptions="Center" VerticalOptions="Center"/>
+            <!--qq-->
+            <ListView x:Name="lst" Grid.Column="1" Grid.Row="1"
+                        RowHeight="45"
+                        SeparatorVisibility="Default"
+                        BackgroundColor="Snow"
+                        ItemSelected="lst_ItemSelected">
+           
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <!-- Main design for our menu items -->
+                            <StackLayout VerticalOptions="FillAndExpand"
+                                         Orientation="Horizontal"
+                                         Padding="20,10,0,10"
+                                         Spacing="20">
+
+                                <Image Source="{Binding Icon}"
+                                            WidthRequest="30"
+                                            HeightRequest="30"
+                                            VerticalOptions="Center" />
+
+                                <Label Text="{Binding Title}"
+                                            FontSize="Medium"
+                                            VerticalOptions="Center"
+                                            TextColor="Black"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+         
+    </Grid>
+    
+</pages:PopupPage>

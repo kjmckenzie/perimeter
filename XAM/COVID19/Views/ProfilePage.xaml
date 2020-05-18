@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="Profile"
+             x:Class="Perimeter.Views.ProfilePage"
+             xmlns:enhancedEntry="clr-namespace:LeoJHarris.FormsPlugin.Abstractions;assembly=LeoJHarris.FormsPlugin.Abstractions"
+             xmlns:controls="clr-namespace:Perimeter.Controls;assembly=Perimeter"
+            
+            >
+
+    <Grid
+               HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource WindowBackgroundTable}"
+               VerticalOptions="FillAndExpand">
+        <Grid.Margin>
+            <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0,20,0,0"/>
+        </Grid.Margin>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0">
+            <Image Margin="10" Source="assets_configureprofile.png" HorizontalOptions="Center" WidthRequest="200" HeightRequest="200"
+                 VerticalOptions="Center"/>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="20">
+
+                <enhancedEntry:EnhancedEntry x:Name="entryName" BackgroundColor="#7635EB" HeightRequest="50" TextColor="White" Margin="0,30,0,0" LeftIcon="ic_account" Placeholder="enter your name" 
+                          PlaceholderColor="LightGray" />
+
+                <!--<enhancedEntry:EnhancedEntry x:Name="entryEMail" LeftIcon="ic_email" Keyboard="Email" Placeholder="type email" HorizontalTextAlignment="Center" WidthRequest="250" HorizontalOptions="Center"/>-->
+
+                <Label Text="Are you feeling unwell?" FontAttributes="Bold" FontSize="Medium" HorizontalTextAlignment="Center"
+                       Margin="0,40,0,0"/>
+                
+                <controls:SegmentedTabControl x:Name="seg" UnselectedSegmentBackgroundColor="#7635EB" TintColor="#092ABB" SelectedSegment="0"
+                      HeightRequest="50" Margin="0,10,0,0">
+                    <controls:SegmentedTabControl.Children>
+                        <Label Text="No" FontSize="Medium"/>
+                        <Label Text="Yes" FontSize="Medium"/>
+                    </controls:SegmentedTabControl.Children>
+                </controls:SegmentedTabControl>
+            </StackLayout>
+        </ScrollView>
+
+        <Button x:Name="btnContinue" Margin="20" Text="Lets get started!" Grid.Row="2"
+                    Clicked="btnContinue_Clicked"
+                    BackgroundColor="{StaticResource Primary}"
+                    TextColor="White" />
+
+    </Grid>
+
+    
+</ContentPage>

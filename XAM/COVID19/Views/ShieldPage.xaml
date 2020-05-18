@@ -1,0 +1,238 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:Perimeter.Controls;assembly=Perimeter"
+             xmlns:conv="clr-namespace:Perimeter.Converters;assembly=Perimeter"
+             xmlns:local="clr-namespace:Perimeter"
+             xmlns:toggle="clr-namespace:Xamarin.Forms.Plugin.CustomToggleButton;assembly=Xamarin.Forms.Plugin.CustomToggleButton"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"             
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+  
+             xmlns:enhancedEntry="clr-namespace:LeoJHarris.FormsPlugin.Abstractions;assembly=LeoJHarris.FormsPlugin.Abstractions"
+             mc:Ignorable="d"
+             x:Class="Perimeter.Views.ShieldPage">
+      
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+
+            <Style x:Key="NameTextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsRegular}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSize28}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="JobTextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsLight}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+            <Style x:Key="HeaderTextStyle" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource PoppinsBold}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSize18}" />
+                <Setter Property="TextColor" Value="{StaticResource Primary}" />
+            </Style>
+            <Style x:Key="LineStyle" TargetType="BoxView">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Fill" />
+                <Setter Property="WidthRequest" Value="1" />
+            </Style>
+
+            <conv:RelativeTimeConverter x:Key="RelativeTimeConverter" />
+            <conv:EqualsParameterContextConverter x:Key="EqualsParameterContextConverter" />
+            <conv:InfectionImageConverter x:Key="InfectionImageConverter" />
+            <conv:BooleanNegationConverter x:Key="BooleanNegationConverter"/>
+            <conv:DistanceConverter x:Key="DistanceConverter"/>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <RelativeLayout>
+            <Grid x:Name="gridRoot" RowSpacing="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                 BackgroundColor="{StaticResource WindowBackgroundTable}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                       Property=Height,
+                                                                       Factor=1,
+                                                                       Constant=0}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1,
+                                                                      Constant=0}">
+           
+                <Grid.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" Android="0" iOS="0,20,0,0"/>
+                </Grid.Margin>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <BoxView BackgroundColor="White" HorizontalOptions="FillAndExpand" HeightRequest="40" 
+              WidthRequest="50" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+                <controls:AnimatedText  Text="PERIMETER" HorizontalOptions="Center" VerticalOptions="Center" IsRunning="False" x:Name="AnimatedTextControl" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
+
+                  
+                </controls:AnimatedText>
+
+                <Image  x:Name="imgSettings"      
+                Source="assets_menu.png"
+               
+                Grid.Row="0" Grid.Column="3"                
+                Aspect="AspectFill"
+                WidthRequest="25" HeightRequest="25" HorizontalOptions="Center" VerticalOptions="Center"    
+               
+                >
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer   Tapped="imgMore_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <!-- HEADER -->
+              
+
+                <!-- USER INFORMATION -->
+                <Grid BackgroundColor="#092ABB" Grid.Row="1" HorizontalOptions="FillAndExpand"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="4"
+                    HeightRequest="80"
+                    
+                    Margin="0" Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+
+                    <Image  x:Name="imgInfection"
+                        Grid.Column="0"
+                        Grid.Row="1" WidthRequest="25" HeightRequest="25"
+                        Source="assets_infectionoff.png"
+                        />
+                    <Label Padding="0,0,0,0"
+                        Grid.Column="0" Grid.ColumnSpan="2"
+                        Grid.Row="0"
+                        x:Name="lblName" LineBreakMode="TailTruncation"
+                        Style="{StaticResource NameTextStyle}"/>
+                    <Label 
+                        Grid.Column="1" HeightRequest="25"
+                        Grid.Row="1" VerticalTextAlignment="Center"
+                        x:Name="lblHealth"
+                        Style="{StaticResource JobTextStyle}"/>
+
+
+                    <ImageButton x:Name="btnTracePlay"  Margin="20" Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        HorizontalOptions="End" VerticalOptions="Center" 
+                        BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="Fill"
+                        Source="assets_traceplay.png" Clicked="btnTrace_Clicked"/>
+
+                    <ImageButton x:Name="btnTraceStop"  Margin="20" IsVisible="False" Grid.Column="0" Grid.ColumnSpan="2"
+                        HorizontalOptions="End" VerticalOptions="Center" Grid.Row="0" Grid.RowSpan="2"
+                        BackgroundColor="Transparent" HeightRequest="50" WidthRequest="50" Aspect="Fill"
+                        Source="assets_tracestop.png" Clicked="btnTrace_Clicked"/>
+
+
+
+                </Grid>
+
+                <controls:BindableMap x:Name="customMap" Grid.Row="2"  Grid.Column="0" Grid.ColumnSpan="4" MapType="Street" MapPosition="{Binding MapPosition}" MapPins="{Binding Pins}"  IsShowingUser="True"/>
+
+            </Grid>
+
+            <controls:BottomDrawer
+                Padding="0" x:Name="drawer" IsVisible="False"
+                BackgroundColor="#092ABB"
+                
+                RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                       Property=Height,
+                                                                       Factor=1,
+                                                                       Constant=0}"
+                RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                      Property=Width,
+                                                                      Factor=1,
+                                                                      Constant=0}"
+                RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                  Property=Height,
+                                                                  Factor=1,
+                                                                  Constant=-100}">
+
+                <Grid x:Name="body" BackgroundColor="#092ABB">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackLayout Margin="10,20,10,10">
+                        <Label x:Name="lblStatus" Text="{Binding Status}" TextColor="Red" FontSize="Medium" FontAttributes="Bold" HeightRequest="40"/>
+                        <ListView x:Name="lstGrid" ItemsSource="{Binding DeviceList}" HasUnevenRows="True"
+                             HeightRequest="200" BackgroundColor="White" VerticalOptions="FillAndExpand">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid Padding="5" Margin="5" BackgroundColor="White" HorizontalOptions="FillAndExpand">
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding .}"/>
+                                            </Grid.GestureRecognizers>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="40" />
+                                                <ColumnDefinition Width="*" />
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*" />
+                                            </Grid.RowDefinitions>
+                                            <Image  HeightRequest="40" WidthRequest="40"  Aspect="Fill"
+                                                Grid.Column="0"    Source="{Binding Path=Infected, Converter={StaticResource InfectionImageConverter}}"  VerticalOptions="Fill"/>
+                                            <StackLayout Spacing="0" Grid.Column="1">
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label TextColor="Black" FontSize="Small" FontAttributes="Bold" Text="{Binding Nickname}"/>
+                                                    <Label TextColor="Black" FontSize="Small" Text=" - "/>
+                                                    <Label TextColor="Black" FontSize="Small" Text="{Binding DeviceName}"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label TextColor="Black" FontSize="Small" FontAttributes="Bold" Text="{Binding DateUpdated, StringFormat='{}{0:ddd, MMM dd H:mmtt}'}"/>
+                                                    <Label TextColor="Black" FontSize="Small" Text="|"/>
+                                                    <Label TextColor="Black" FontSize="Small" Text="{Binding Path=Distance, Converter={StaticResource DistanceConverter}}"/>
+                                               
+                                                </StackLayout>
+                                            </StackLayout>
+                                          
+                                         
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+
+                    </StackLayout>
+
+                    <Image Source="assets_splitter.png" Margin="0,10,0,0" VerticalOptions="Start" WidthRequest="50" HeightRequest="10" HorizontalOptions="Center"
+                           />
+
+                    <ImageButton Source="assets_trash.png" x:Name="btnReset"  Margin="20,5,20,20" 
+                          VerticalOptions="Start"
+                          HeightRequest="50" WidthRequest="50" HorizontalOptions="End"
+                          BackgroundColor="Transparent" Clicked="btnReset_Clicked" />
+
+                </Grid>
+
+            </controls:BottomDrawer>
+        </RelativeLayout> 
+     
+    </ContentPage.Content>
+</ContentPage>

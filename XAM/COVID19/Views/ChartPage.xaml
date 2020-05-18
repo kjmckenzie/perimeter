@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="Social Interactions"
+             x:Class="Perimeter.Views.ChartPage"
+             xmlns:enhancedEntry="clr-namespace:LeoJHarris.FormsPlugin.Abstractions;assembly=LeoJHarris.FormsPlugin.Abstractions"
+             xmlns:controls="clr-namespace:Perimeter.Controls;assembly=Perimeter"
+             xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+                >
+
+    <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  Padding="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <forms:ChartView x:Name="chart" HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand"/>
+
+
+        <Label x:Name="lblStatus" FontSize="Medium" FontAttributes="Bold" HorizontalTextAlignment="Center"
+            HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False" Text="No data!"/>
+
+    </Grid>
+
+
+</ContentPage>
