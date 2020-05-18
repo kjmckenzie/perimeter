@@ -17,12 +17,16 @@ The chart option allows you to review your last 24 hrs of activity to see what t
 
 This app uses you device Bluetooth and GPS features and does not share any internal data, nor will you be asked to upload any data to any 3rd party organisations.
 
-<b>Platforms</b>
-Android, iOS.
+<b>Platforms</b><br>
+Android, iOS.<br>
 
-<b>Features:</b>
-PancakeView.
-Plugin.MediaManager.Forms.
+<b>Features:</b><br>
+Plugin.Ble.<br>
+Microcharts.<br>
+LeoJHarris.XForms.Plugin.EnhancedEntry.<br>
+SkiaSharp.<br>
+Xamarin.Forms.Plugin.CustomToggleButton.<br>
+Rg.Plugins.Popup.<br>
 
 
 
