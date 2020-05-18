@@ -15,9 +15,14 @@ The chart option allows you to review your last 24 hrs of activity to see what t
 
 <img src="https://github.com/kjmckenzie/perimeter/blob/master/XAM/Images/chart.PNG?raw=true" width="300"/>
 
-This app uses you device Bluetooth and GPS features and does not share any internal data, nor will you be asked to upload any data to us or a 3rd party organisation.
+This app uses you device Bluetooth and GPS features and does not share any internal data, nor will you be asked to upload any data to any 3rd party organisations.
 
-The codeset currently works on Android and iOS supported devices.
+<b>Platforms</b>
+Android, iOS.
+
+<b>Features:</b>
+PancakeView.
+Plugin.MediaManager.Forms.
 
 
 
